@@ -1,0 +1,219 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* GitHub-inspired modern color palette */
+    --background: 220 26% 97%;
+    --foreground: 220 26% 14%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 220 26% 14%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 26% 14%;
+
+    /* Primary: Deep blue with modern feel */
+    --primary: 217 91% 60%;
+    --primary-foreground: 0 0% 98%;
+    --primary-hover: 217 91% 55%;
+
+    /* Secondary: Subtle purple accent */
+    --secondary: 262 83% 58%;
+    --secondary-foreground: 0 0% 98%;
+
+    /* Muted backgrounds */
+    --muted: 220 13% 95%;
+    --muted-foreground: 220 9% 46%;
+
+    /* Accent: Vibrant cyan for highlights */
+    --accent: 185 84% 60%;
+    --accent-foreground: 220 26% 14%;
+
+    /* Success and error states */
+    --success: 142 76% 36%;
+    --success-foreground: 0 0% 98%;
+    
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+
+    /* Borders and inputs */
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 217 91% 60%;
+
+    /* Custom gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(217 91% 60%), hsl(262 83% 58%));
+    --gradient-secondary: linear-gradient(135deg, hsl(185 84% 60%), hsl(217 91% 60%));
+    --gradient-accent: linear-gradient(90deg, hsl(217 91% 60%), hsl(185 84% 60%));
+
+    /* Shadows */
+    --shadow-soft: 0 2px 10px hsl(220 13% 13% / 0.1);
+    --shadow-medium: 0 8px 30px hsl(220 13% 13% / 0.12);
+    --shadow-strong: 0 30px 60px hsl(220 13% 13% / 0.15);
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    /* Dark theme with GitHub-inspired palette */
+    --background: 220 26% 9%;
+    --foreground: 220 9% 89%;
+
+    --card: 220 26% 12%;
+    --card-foreground: 220 9% 89%;
+
+    --popover: 220 26% 12%;
+    --popover-foreground: 220 9% 89%;
+
+    /* Primary: Bright blue for dark theme */
+    --primary: 217 91% 65%;
+    --primary-foreground: 220 26% 9%;
+    --primary-hover: 217 91% 70%;
+
+    /* Secondary: Purple accent */
+    --secondary: 262 83% 63%;
+    --secondary-foreground: 220 26% 9%;
+
+    --muted: 220 26% 15%;
+    --muted-foreground: 220 9% 55%;
+
+    /* Accent: Cyan highlight */
+    --accent: 185 84% 65%;
+    --accent-foreground: 220 26% 9%;
+
+    /* Success and error for dark */
+    --success: 142 76% 41%;
+    --success-foreground: 220 26% 9%;
+    
+    --destructive: 0 84% 65%;
+    --destructive-foreground: 220 26% 9%;
+
+    --border: 220 26% 18%;
+    --input: 220 26% 18%;
+    --ring: 217 91% 65%;
+
+    /* Dark theme gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(217 91% 65%), hsl(262 83% 63%));
+    --gradient-secondary: linear-gradient(135deg, hsl(185 84% 65%), hsl(217 91% 65%));
+    --gradient-accent: linear-gradient(90deg, hsl(217 91% 65%), hsl(185 84% 65%));
+
+    /* Enhanced shadows for dark theme */
+    --shadow-soft: 0 2px 10px hsl(0 0% 0% / 0.3);
+    --shadow-medium: 0 8px 30px hsl(0 0% 0% / 0.4);
+    --shadow-strong: 0 30px 60px hsl(0 0% 0% / 0.5);
+
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  @keyframes spin-slow {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
+  @keyframes spin-slow-reverse {
+    from { transform: rotate(360deg); }
+    to { transform: rotate(0deg); }
+  }
+  @keyframes globe-spin {
+    from { transform: rotateY(0deg) rotateX(10deg); }
+    to { transform: rotateY(360deg) rotateX(10deg); }
+  }
+  @keyframes pulse-slow {
+    0%, 100% { opacity: 0.5; }
+    50% { opacity: 1; }
+  }
+  @keyframes horizontal-lines {
+    from { transform: translateY(-50px); opacity: 0; }
+    to { transform: translateY(50px); opacity: 1; }
+  }
+  @keyframes gradient-text {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+  @keyframes fade-in-up {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+}
+
+.animate-spin-slow {
+  animation: spin-slow 20s linear infinite;
+}
+.animate-spin-slow-reverse {
+  animation: spin-slow-reverse 20s linear infinite;
+}
+.animate-globe-spin {
+  animation: globe-spin 30s linear infinite;
+  transform-style: preserve-3d;
+}
+.animate-pulse-slow {
+  animation: pulse-slow 4s ease-in-out infinite;
+}
+.animate-horizontal-lines {
+  animation: horizontal-lines 5s ease-in-out infinite alternate;
+}
+.animate-gradient-text {
+  background-size: 200% 200%;
+  animation: gradient-text 5s ease infinite;
+}
+.animate-fade-in-up {
+  animation: fade-in-up 0.8s ease-out forwards;
+}
+
+/* Custom utilities */
+@layer utilities {
+  .gradient-primary {
+    background: var(--gradient-primary);
+  }
+  
+  .gradient-secondary {
+    background: var(--gradient-secondary);
+  }
+  
+  .gradient-accent {
+    background: var(--gradient-accent);
+  }
+  
+  .shadow-soft {
+    box-shadow: var(--shadow-soft);
+  }
+  
+  .shadow-medium {
+    box-shadow: var(--shadow-medium);
+  }
+  
+  .shadow-strong {
+    box-shadow: var(--shadow-strong);
+  }
+  
+  .text-gradient {
+    background: var(--gradient-primary);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}
